@@ -1,13 +1,25 @@
 package com.huvenet.practice.ddd.core.application;
 
 import com.huvenet.practice.ddd.core.domain.Aggregate;
+import com.huvenet.practice.ddd.core.domain.BaseEntity;
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-public abstract class DomainResult<T extends Aggregate<?>> {
+public class DomainResult<T extends Aggregate<?>> {
     private boolean success;
     private String message;
     private T result;
 
-    public abstract Object transferResult();
+    private DomainResult() {
+    }
+
+    public DomainResult(boolean success) {
+        this.success = success;
+    }
+
+    public DomainResult(boolean success, T result) {
+        this.success = success;
+        this.result = result;
+    }
 }

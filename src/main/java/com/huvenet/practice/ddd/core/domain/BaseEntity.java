@@ -17,10 +17,8 @@ import org.hibernate.annotations.CreationTimestamp;
 public class BaseEntity {
 
     @Id
-    private UUID id;
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long index;
+    private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
