@@ -5,7 +5,9 @@ import com.huvenet.practice.ddd.core.domain.BaseEntity;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import lombok.Builder;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class Cargo extends BaseEntity {
 

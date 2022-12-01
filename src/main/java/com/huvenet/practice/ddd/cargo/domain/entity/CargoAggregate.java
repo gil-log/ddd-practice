@@ -2,17 +2,28 @@ package com.huvenet.practice.ddd.cargo.domain.entity;
 
 import com.huvenet.practice.ddd.cargo.domain.vo.Capacity;
 import com.huvenet.practice.ddd.core.domain.Aggregate;
+import java.util.Date;
 import lombok.Builder;
 
 public class CargoAggregate extends Aggregate<Cargo> {
 
+    @Builder(
+        builderMethodName = "initEmpty"
+    )
     private CargoAggregate() {
         super();
     }
 
+
     @Builder(
-        builderClassName = "initCargo"
-        , builderMethodName = "initCargoByCapacity"
+        builderMethodName = "initByRoot"
+    )
+    private CargoAggregate(Cargo cargo) {
+        super(cargo);
+    }
+
+    @Builder(
+        builderMethodName = "initByCargoUsingCapacity"
     )
     private CargoAggregate(Capacity capacity) {
         super(Cargo
@@ -20,5 +31,21 @@ public class CargoAggregate extends Aggregate<Cargo> {
             .capacity(capacity)
             .build()
         );
+    }
+
+    public Long getId() {
+        return root.getId();
+    }
+
+    public Date getCreatedAt() {
+        return root.getCreatedAt();
+    }
+
+    public Date getUpdatedAt() {
+        return root.getUpdatedAt();
+    }
+
+    public Capacity getCapacity() {
+        return root.getCapacity();
     }
 }

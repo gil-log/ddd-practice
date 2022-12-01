@@ -1,8 +1,11 @@
 package com.huvenet.practice.ddd.core.domain;
 
+import lombok.Getter;
+
+@Getter
 public class Aggregate<T extends BaseEntity> {
 
-    private T root;
+    protected T root;
 
     protected Aggregate() {
     }
