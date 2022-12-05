@@ -1,7 +1,8 @@
 package com.huvenet.practice.ddd.cargo.infra;
 
-import com.huvenet.practice.ddd.cargo.domain.entity.Cargo;
-import com.huvenet.practice.ddd.cargo.domain.entity.CargoAggregate;
+import com.huvenet.practice.ddd.cargo.domain.model.Cargo;
+import com.huvenet.practice.ddd.cargo.infra.entity.CargoEntity;
+import com.huvenet.practice.ddd.cargo.domain.model.CargoAggregate;
 import javax.persistence.PersistenceException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -18,14 +19,14 @@ public class DeliverCargoPersistent implements CargoPersistent {
 
     @Override
     public CargoAggregate insertCargo(CargoAggregate cargoAggregate) {
-        Cargo cargo = cargoAggregate.getRoot();
+        CargoEntity cargoEntity = CargoEntity.initByModel().cargo(cargoAggregate.getRoot()).build();
         try {
-            cargoRepository.save(cargo);
+            cargoRepository.save(cargoEntity);
         } catch (PersistenceException e) {
             log.error("[DeliverCargoPersistent [insertCargo]] - ", e);
             return CargoAggregate.initEmpty().build();
         }
-        return CargoAggregate.initByRoot().cargo(cargo).build();
+        return CargoAggregate.initByRoot().cargo(cargoEntity.toModel()).build();
     }
 
     @Override

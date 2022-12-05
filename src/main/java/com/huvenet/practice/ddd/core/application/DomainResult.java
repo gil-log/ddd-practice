@@ -1,8 +1,6 @@
 package com.huvenet.practice.ddd.core.application;
 
 import com.huvenet.practice.ddd.core.domain.Aggregate;
-import com.huvenet.practice.ddd.core.domain.BaseEntity;
-import lombok.Builder;
 import lombok.Getter;
 
 @Getter

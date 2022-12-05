@@ -1,8 +1,8 @@
 package com.huvenet.practice.ddd.cargo.application;
 
-import com.huvenet.practice.ddd.cargo.domain.entity.CargoAggregate;
+import com.huvenet.practice.ddd.cargo.domain.model.CargoAggregate;
 import com.huvenet.practice.ddd.cargo.domain.event.DeliverCargoEvent;
-import com.huvenet.practice.ddd.cargo.domain.vo.Capacity;
+import com.huvenet.practice.ddd.cargo.domain.model.vo.Capacity;
 import com.huvenet.practice.ddd.cargo.presentation.request.InsertCargoRequest;
 import com.huvenet.practice.ddd.cargo.presentation.response.InsertCargoResponse;
 import com.huvenet.practice.ddd.cargo.presentation.response.InsertCargoResponse.ResponseCode;
