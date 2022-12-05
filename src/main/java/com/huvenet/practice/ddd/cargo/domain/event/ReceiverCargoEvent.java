@@ -1,7 +1,6 @@
 package com.huvenet.practice.ddd.cargo.domain.event;
 
-import com.huvenet.practice.ddd.cargo.domain.entity.CargoAggregate;
-import com.huvenet.practice.ddd.cargo.domain.vo.Capacity;
+import com.huvenet.practice.ddd.cargo.domain.model.CargoAggregate;
 import com.huvenet.practice.ddd.cargo.presentation.request.InsertCargoRequest;
 import com.huvenet.practice.ddd.core.application.DomainResult;
 import org.springframework.stereotype.Service;

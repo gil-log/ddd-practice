@@ -1,5 +1,6 @@
-package com.huvenet.practice.ddd.core.domain;
+package com.huvenet.practice.ddd.core.infra;
 
+import com.huvenet.practice.ddd.core.domain.DomainModel;
 import java.util.Date;
 import java.util.UUID;
 import javax.persistence.Column;
@@ -10,23 +11,26 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Getter
 @MappedSuperclass
-public class BaseEntity {
+public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     @Column(updatable = false, insertable = false)
-    private Date createdAt;
+    protected Date createdAt;
 
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     @Column(updatable = false, insertable = false)
-    private Date updatedAt;
+    protected Date updatedAt;
+
+    public abstract DomainModel toModel();
 }

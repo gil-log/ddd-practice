@@ -1,7 +1,6 @@
-package com.huvenet.practice.ddd.cargo.domain.vo;
+package com.huvenet.practice.ddd.cargo.domain.model.vo;
 
 import com.huvenet.practice.ddd.core.domain.ValueObject;
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import lombok.Builder;
 import lombok.Getter;

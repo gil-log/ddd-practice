@@ -1,6 +1,7 @@
-package com.huvenet.practice.ddd.cargo.domain.entity;
+package com.huvenet.practice.ddd.cargo.domain.model;
 
-import com.huvenet.practice.ddd.cargo.domain.vo.Capacity;
+import com.huvenet.practice.ddd.cargo.domain.model.vo.Capacity;
+import com.huvenet.practice.ddd.cargo.infra.entity.CargoEntity;
 import com.huvenet.practice.ddd.core.domain.Aggregate;
 import java.util.Date;
 import lombok.Builder;

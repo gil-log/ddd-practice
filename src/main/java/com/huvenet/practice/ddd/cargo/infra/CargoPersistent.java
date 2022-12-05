@@ -1,6 +1,6 @@
 package com.huvenet.practice.ddd.cargo.infra;
 
-import com.huvenet.practice.ddd.cargo.domain.entity.CargoAggregate;
+import com.huvenet.practice.ddd.cargo.domain.model.CargoAggregate;
 import org.springframework.data.domain.Page;
 
 public interface CargoPersistent {
