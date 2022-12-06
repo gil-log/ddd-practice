@@ -20,14 +20,16 @@ public class Cargo extends DomainModel {
     }
 
     @Builder(
-        builderMethodName = "initByCapacity"
+        builderClassName = "initByCapacity"
+        , builderMethodName = "initByCapacity"
     )
     private Cargo(Capacity capacity) {
         this.capacity = capacity;
     }
 
     @Builder(
-        builderMethodName = "initByCapacityAndBase"
+        builderClassName = "init"
+        , builderMethodName = "initByCapacityAndBase"
     )
     private Cargo(Capacity capacity, Long id, Date createdAt, Date updatedAt) {
         validateCapacityNonNull(capacity);
