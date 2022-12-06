@@ -21,7 +21,16 @@ public class DeliverCargoEvent implements ICargoEvent {
 
     @Override
     public DomainResult<CargoAggregate> insertCargo(InsertCargoRequest request) {
-        CargoAggregate insertCargoAggregate = deliverCargoPersistent.insertCargo(CargoAggregate.initByCargoUsingCapacity().capacity(Capacity.initByAll().length(request.getLength()).weight(request.getWeight()).build()).build());
+        CargoAggregate insertCargoAggregate = deliverCargoPersistent.insertCargo(
+
+
+            CargoAggregate.initByCargoUsingCapacity()
+                .capacity(
+                    Capacity.initByAll()
+                        .length(request.getLength())
+                        .weight(request.getWeight())
+                        .build()).
+                build());
         if(insertCargoAggregate.getRoot() != null) {
             return new DomainResult<>(true, insertCargoAggregate);
         }

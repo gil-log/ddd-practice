@@ -41,7 +41,7 @@ public class CargoEntity extends BaseEntity {
 
     @Override
     public Cargo toModel() {
-        return Cargo.initByAll().capacity(Capacity.initByAll().length(length).weight(weight).build()).id(id).updatedAt(updatedAt).createdAt(createdAt).build();
+        return null;
     }
 
 }

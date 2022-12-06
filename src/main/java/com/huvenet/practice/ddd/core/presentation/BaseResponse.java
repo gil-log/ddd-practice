@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public abstract class BaseResponse {
+public class BaseResponse {
 
     private boolean success;
     private Integer code;
